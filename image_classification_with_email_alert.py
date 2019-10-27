@@ -12,12 +12,16 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 
+
+##connecting google drive to google colab##
 from google.colab import drive
 drive.mount('/content/drive')
-
+##DATADIR is images folder which has images of the two classes 'not emp' and 'emp'##
 DATADIR = "/content/drive/My Drive/images_classifi/images"
 CATEGORIES = ["not emp", "emp"]
 
+##Reading all the images in directory##
+##coverting all the images in from the DATADIR folder using 
 for category in CATEGORIES:
   path = os.path.join(DATADIR, category)
   for img in os.listdir(path):
