@@ -21,7 +21,7 @@ DATADIR = "/content/drive/My Drive/images_classifi/images"
 CATEGORIES = ["not emp", "emp"]
 
 ##Reading all the images in directory##
-##coverting all the images in from the DATADIR folder using 
+##coverting all the images in from the DATADIR folder using gradscaling##
 for category in CATEGORIES:
   path = os.path.join(DATADIR, category)
   for img in os.listdir(path):
@@ -36,6 +36,7 @@ print(img_array.shape)
 
 path
 
+##Reshaping the image##
 IMG_SIZE = 80
 new_array = cv2.resize(img_array, (IMG_SIZE,IMG_SIZE))
 plt.imshow(new_array,cmap="gray")
@@ -58,6 +59,7 @@ create_training_data()
 
 print(len(training_data))
 
+##using the random shuffle to choose the Reshaped images images##
 import random
 random.shuffle(training_data)
 
